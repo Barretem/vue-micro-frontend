@@ -1,0 +1,47 @@
+{
+  "name": "vue-micro-frontend",
+  "version": "0.1.0",
+  "description": "基于vue打造的微前端框架",
+  "private": true,
+  "scripts": {
+    "build": "webpack -p --progress",
+    "start": "concurrently --kill-others --kill-others-on-fail -p name --names \"config,standardApp\" \"npm run start:config\" \"npm run start:standard-app\"",
+    "start:config": "webpack-dev-server",
+    "start:standard-app": "cd standardApp && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Barretem/vue-micro-frontend.git"
+  },
+  "keywords": [
+    "vue",
+    "single-spa",
+    "vue-cli",
+    "vue-element-admin"
+  ],
+  "author": "barret",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Barretem/vue-micro-frontend/issues"
+  },
+  "homepage": "https://github.com/Barretem/vue-micro-frontend#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.2",
+    "@babel/core": "^7.6.2",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.0.4",
+    "concurrently": "^5.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack": "^4.41.0",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.2"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.6.0",
+    "core-js": "2",
+    "single-spa": "^4.4.1"
+  }
+}
